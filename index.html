@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="js/prism.css">
+    <style>
+        body {
+                font-family: Baskerville, Palatino, serif;
+    background-color: #b9b7b7;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.3) 35px, rgba(0, 0, 0, 0.3) 70px), repeating-linear-gradient(-45deg, transparent, rgba(0, 0, 0, 0) 35px, rgba(255,255,255,.8) 35px, rgba(113, 87, 87, 0.8) 70px);
+    color: #ffffff;
+    font-size: 1.5em;
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+        }
+        #description p {
+            padding: 0 20px;
+        }
+        .part {
+            display: block;
+        }
+        .part::before {
+            content: '#### ';
+/*            text-shadow: 0 0 1px red;*/
+/*            color: transparent;*/
+        }
+
+        .part::after {
+            content: ' ####';
+/*            text-shadow: 0 0 1px red;*/
+/*            color: transparent;*/
+        }
+        #header {
+            height: 100px;
+            text-align: center;
+            background: linear-gradient(45deg, red, 20%);
+        }
+
+        .title {
+            text-shadow: 1px -1px 4px black;
+            font-size: 3em;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            white-space: pre;
+            padding: 0 1em;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <span class="title">sovalid</span>
+    </div>
+
+    <div id="description">
+        <p>
+            sovalid is a library for doing validation on javascript object. The library depends of nothing.<br>
+            It take only 5k in minified version. Just include it & work.<br>
+        </p>
+    </div>
+
+    <div id="documentation">
+
+        <p>
+            How to use it ?
+        </p>
+        <p>
+            First things to do is create an instance :
+            <pre>
+<code class="language-javascript">
+var validator = sovalid(object_to_test);
+</code>
+</pre>
+        </p>
+        <p>
+            <span class="part">add Validation Rule</span> you can add new validation functions simply :
+            <pre>
+<code class="language-javascript">
+validator.avr('nameYouWant', function);
+</code>
+</pre>
+        </p>
+
+        <p>
+            <span class="part">add Validation Part</span> You can create validation part :
+            <pre>
+<code  class="language-javascript">
+validator.avp('part name', []);
+</code>
+</pre> or
+            <pre>
+<code  class="language-javascript">
+validator.avp('employee_extra', ['property1', 'property2']);
+</code>
+</pre>
+        </p>
+
+        <p>
+            <span class="part">You can define your validation rule</span> By ruleMaker :
+
+            <pre>
+<code  class="language-javascript">
+validator.rulemaker('property').required(true).av('minLength', 3).make('part name or nothing')
+</code>
+</pre> By json object :
+
+            <pre>
+<code  class="language-javascript">
+validator.addRule('property', {
+                                required: false,
+                                global: false,
+                                validationRules: {},
+                                activeDepends: [],
+                                passiveDepends: []
+                               });
+</code>
+</pre>
+        </p>
+
+        <p>
+            <span class="part">You can validate </span> by part :
+            <pre>
+<code  class="language-javascript">
+validator.validateParts(['part name']);
+</code>
+</pre> by props array :
+            <pre>
+<code  class="language-javascript">
+validator.validateProps(['property1', 'property2']);
+</code>
+</pre> all validation you define :
+            <pre>
+<code  class="language-javascript">
+validator.validate();
+</code>
+</pre>
+        </p>
+
+        <p>
+            For more detail, you can use debug function on the validator or read the code.
+        </p>
+
+    </div>
+
+    <div>
+        <p>
+            For example, take a simple object person that contains my informations :
+            <pre>
+<code class="language-json">
+var objToTest = {
+    person: {
+        firstname: 'Kevin',
+        lastname: 'Leclerc',
+        age: 31
+    }
+};
+</code>
+</pre>
+        </p>
+        <p>
+            We want a simple validation like that :
+            <pre>
+<code class="language-javascript">
+var sov = sovalid(objToTest);
+sov.rulemaker('person.firstname').r(true).av('minLength', 8).make('a');
+sov.rulemaker('person.lastname').r(true).av('maxLength', 6).make('b');
+</code>
+</pre>
+        </p>
+        <p>
+            We can apply the test with different way :
+            <pre>
+<code class="language-javascript">
+sov.validate();
+sov.validateParts(['a', 'b']);
+sov.validateProps(['person.firstname', 'person.lastname']);
+</code>
+</pre>
+        </p>
+    <p>
+        If we don't need a variable but a simple fast test, we can do that :
+        <pre>
+<code class="language-javascript">
+sovalid(objToTest)
+.rulemaker('person.firstname').r(true).av('minLength', 8).make()
+.rulemaker('person.lastname').r(true).av('maxLength', 6).make()
+.validate();
+</code>
+</pre>
+This is fast and easy !
+    </p>
+    </div>
+    <script src="js/prism.js"></script>
+    <script src="dist/sovalid-1.min.js"></script>
+</body>
+
+</html>
