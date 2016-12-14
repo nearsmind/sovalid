@@ -1,5 +1,43 @@
 # sovalid
 sovalid is a library for doing validation on javascript object. The library depends of nothing.<br>
+
+What change in version 2 ?<br><br>
+
+You can now use ruleMaker separatly from validator.<br>
+That let you to use yours rules/combinaison of rules with different validator.<br><br>
+
+The validator is stateless.<br>
+You inject the object to test when you need to test it.<br>
+You need to create a true instance of the validator when you want to keep rules, part without put always when you want to test.<br><br>
+
+It take only 6k in minified version. Just include it & work.<br><br>
+
+how to use sovalid version 2 ?<br><br>
+
+Create yours rules :<br>
+<pre>
+<code class="language-javascript">
+var firstr = ruleMaker
+                .newRule('testfirstname', 'personal.firstname').r(true).next()
+                .newRule('testLastName', 'personal.lastname').r(true).av('minLength', 20).end();
+</code>
+</pre>
+
+Create your validator :<br>
+<pre>
+<code class="language-javascript">
+//add rules & validate
+sovalid().ars(secondr).validate(person)
+//same before but add a part
+sovalid().ars(secondr).avp('testpart', ['testLastName']).validateParts(person, ['testpart'])
+</code>
+</pre>
+
+A lot of functionalities of version don't change.<br>
+You can always add your validation rules, active & passive depends, ...<br><br>
+
+how to use sovalid version 1 ?<br><br>
+
 It take only 5k in minified version. Just include it & work.<br><br>
 How to use it ?<br><br>
 
