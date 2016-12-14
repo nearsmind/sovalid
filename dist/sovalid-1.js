@@ -60,7 +60,7 @@
         }
 
         /**
-         * @param   {} item object to test
+         * @param    item object to test
          * @returns {boolean} result of test
          */
         function isObject(item) {
@@ -69,15 +69,29 @@
 
         /**
          * Test if an object is a true object, not window or anything else
-         * @param   {} item object to test
+         * @param    item object to test
          * @returns {boolean} result of test
          */
         function isPlainObject(item) {
-            return (someValue != null && Object.prototype.toString.call(someValue) === "[object Object]");
+            return (item != null && Object.prototype.toString.call(item) === "[object Object]");
         }
 
         /**
-         * @param   {} item object to test
+         *
+         * @param val
+         * @returns {boolean}
+         */
+        function getBool(val){
+            if (val === undefined) {
+                return false;
+            }
+
+            var num = +val;
+            return !isNaN(num) ? !!num : !!String(val).toLowerCase().replace(!!0,'');
+        }
+
+        /**
+         * @param    item object to test
          * @returns {boolean} result of test
          */
         function isString(item) {
@@ -85,7 +99,7 @@
         }
 
         /**
-         * @param   {} item object to test
+         * @param    item object to test
          * @returns {boolean} result of test
          */
         function isFunction(item) {
@@ -96,12 +110,12 @@
          * get value of a property
          * @param   {object} o            the object containing the property
          * @param   {string}   prop         the property value to return
-         * @param   {} defaultValue [[Description]]
-         * @returns {} the value
+         * @param    defaultValue [[Description]]
+         * @returns  Object value
          */
         function get(o, prop, defaultValue) {
             if (!prop || !isString(prop) || !prop.trim().length > 0) {
-                return;
+                return undefined;
             }
 
             var props = prop.split('.');
@@ -205,19 +219,19 @@
             _functions = {};
 
             _functions['min'] = function minRule(currentValue, params) {
-                return (currentValue >= params.value ? true : false);
+                return (currentValue >= params.value);
             };
 
             _functions['max'] = function maxRule(currentValue, params) {
-                return (currentValue <= params.value ? true : false);
+                return (currentValue <= params.value);
             };
 
             _functions['minLength'] = function minLengthRule(currentValue, params) {
-                return (currentValue.length >= params.value ? true : false);
+                return (currentValue.length >= params.value);
             };
 
             _functions['maxLength'] = function maxLengthRule(currentValue, params) {
-                return (currentValue.length <= params.value ? true : false);
+                return (currentValue.length <= params.value);
             };
         })();
 
@@ -277,6 +291,7 @@
              * [[Description]]
              * @param   {String} vname [[Description]]
              * @param   {Object} value [[Description]]
+             * @param steps
              * @returns {object} functions usable on rulemaker object
              */
             function addValidation(vname, value, steps) {
@@ -324,6 +339,7 @@
             /**
              * define if a value is required
              * @param   {Boolean} value [[Description]]
+             * @param steps
              * @returns {object} functions usable on rulemaker object
              */
             function required(value, steps) {
@@ -337,6 +353,7 @@
              * define active depends. If a property contains such value, execute validations
              * @param   {String} prop         [[Description]]
              * @param   {Object} waitingValue [[Description]]
+             * @param operand
              * @returns {object} functions usable on rulemaker object
              */
             function addActiveDepends(prop, waitingValue, operand) {
@@ -352,9 +369,9 @@
             /**
              * define passivate depends that said if a prop must be test
              * @param   {string} prop         [[Description]]
-             * @param   {} waitingValue [[Description]]
+             * @param    waitingValue [[Description]]
              * @param   {boolean} mustBeValid  [[Description]]
-             * @param   {[[Type]]} operand      [[Description]]
+             * @param   {String} operand      [[Description]]
              * @returns {object} functions usable on rulemaker object
              */
             function addPassiveDepends(prop, waitingValue, mustBeValid, operand) {
@@ -389,28 +406,30 @@
         /**
          * Execute validations defined for a property
          * @param   {Object} rule         [[Description]]
-         * @param   {String} currentValue [[Description]]
+         * @param   {Object} currentValue [[Description]]
+         * @param steps
          * @returns {Object} [[Description]]
          */
         function applyRule(rule, currentValue, steps) {
             var validationResult = true;
-            var error;
-            var params;
+            var error = undefined;
+            var params = undefined;
             var isForceValidation = false;
 
             /**
              * Check if depends are satisfied and the requirement of a value
              */
             (function doPreValidation() {
-
+                var isFunctionRes;
+                var i;
                 var isContainsValue = checkIfContainsValue(currentValue);
 
                 //check the passive depends rules. If a rule is true, the value become required
-                for (var i = 0; i < rule.passiveDepends.length; i++) {
-                    var isFunction = isFunction(rule.passiveDepends[i].value);
+                for (i = 0; i < rule.passiveDepends.length; i++) {
+                    isFunctionRes = isFunction(rule.passiveDepends[i].value);
 
-                    if ((isFunction && rule.passiveDepends[i].value.call(this, get(_obj, rule.passiveDepends[i].prop))) ||
-                        (!isFunction && executeCondition(rule.passiveDepends[i]))) {
+                    if ((isFunctionRes && rule.passiveDepends[i].value.call(this, get(_obj, rule.passiveDepends[i].prop))) ||
+                        (!isFunctionRes && executeCondition(rule.passiveDepends[i]))) {
 
                         //if the depends is true, force the validation
                         isForceValidation = true;
@@ -431,11 +450,11 @@
                 }
 
                 //check the normal depends rules.
-                for (var i = 0; i < rule.activeDepends.length; i++) {
-                    var isFunction = isFunction(rule.activeDepends[i].value);
+                for (i = 0; i < rule.activeDepends.length; i++) {
+                    isFunctionRes = isFunction(rule.activeDepends[i].value);
 
-                    if ((isFunction && !rule.activeDepends[i].value.call(this, get(_obj, rule.activeDepends[i].prop))) ||
-                        (!isFunction && !executeCondition(rule.activeDepends[i]))) {
+                    if ((isFunctionRes && !rule.activeDepends[i].value.call(this, get(_obj, rule.activeDepends[i].prop))) ||
+                        (!isFunctionRes && !executeCondition(rule.activeDepends[i]))) {
 
                         //if the depends is not true, bypass the validation
                         validationResult = true;
@@ -464,10 +483,10 @@
             })();
 
             /**
-             * @param   {[[Type]]} value [[Description]]
              * @returns {boolean}  [[Description]]
+             * @param currentValue
              */
-            function checkIfContainsValue(value) {
+            function checkIfContainsValue(currentValue) {
                 var type = typeof currentValue;
 
                 //test if the value is a boolean and is define with valid values (true/false)
@@ -476,13 +495,7 @@
                     return false;
 
                     //else test if the value is not a number/boolean and if the value is define or if the value is a string with only space
-                } else if (type !== 'number' && type !== 'boolean' && (!currentValue || (isString(currentValue) && currentValue.trim() === ''))) {
-
-                    return false;
-                } else {
-
-                    return true;
-                }
+                } else return !(type !== 'number' && type !== 'boolean' && (!currentValue || (isString(currentValue) && currentValue.trim() === '')));
             }
 
             /**
@@ -529,36 +542,38 @@
                 }
 
                 for (var keyPropRule in rule.validationRules) {
-                    if (isContainsSteps(steps, rule.validationRules[keyPropRule].steps)) {
-                        var fn = _functions[rule.validationRules[keyPropRule].fn];
+                    if (rule.validationRules.hasOwnProperty(keyPropRule)) {
+                        if (isContainsSteps(steps, rule.validationRules[keyPropRule].steps)) {
+                            var fn = _functions[rule.validationRules[keyPropRule].fn];
 
-                        if (isFunction(rule.validationRules[keyPropRule].params.value)) {
-                            validationResult = fn.call(this, currentValue, rule.validationRules[keyPropRule].params.value.call(this));
-                        } else {
-                            validationResult = fn.call(this, currentValue, rule.validationRules[keyPropRule].params);
-                        }
+                            if (isFunction(rule.validationRules[keyPropRule].params.value)) {
+                                validationResult = fn.call(this, currentValue, rule.validationRules[keyPropRule].params.value.call(this));
+                            } else {
+                                validationResult = fn.call(this, currentValue, rule.validationRules[keyPropRule].params);
+                            }
 
-                        if (isObject(validationResult)) {
-                            if (!validationResult.result) {
-                                if (validationResult.error) {
-                                    error = validationResult.error;
-                                } else {
-                                    error = keyPropRule;
+                            if (isObject(validationResult)) {
+                                if (!validationResult.result) {
+                                    if (validationResult.error) {
+                                        error = validationResult.error;
+                                    } else {
+                                        error = keyPropRule;
+                                    }
+
+                                    params = rule.validationRules[keyPropRule].params;
+
+                                    validationResult = validationResult.result;
+
+                                    return;
                                 }
 
+                                validationResult = true;
+                            } else if (!validationResult) {
+                                error = keyPropRule;
                                 params = rule.validationRules[keyPropRule].params;
-
-                                validationResult = validationResult.result;
 
                                 return;
                             }
-
-                            validationResult = true;
-                        } else if (!validationResult) {
-                            error = keyPropRule;
-                            params = rule.validationRules[keyPropRule].params;
-
-                            return;
                         }
                     }
                 }
@@ -597,10 +612,9 @@
          * @param {Array}    errors
          * @param {Object}   rule     object containing validation to do
          * @param {String}   prop     property to validate
-         * @param {Array} steps
-         * @param {String}   partName Can be undefined if is not a validation part
+         * @param {Array} steps Can be undefined if is not a validation part
          */
-        function executeRule(errors, rule, prop, steps, partName) {
+        function executeRule(errors, rule, prop, steps) {
             if (rule) {
                 var currentValue = get(_obj, prop);
 
@@ -620,14 +634,12 @@
          * Execute the validation
          * @param {Array} errors
          * @param {Array} steps
-         * @param {Array}    props    properties names
-         * @param {String}   partName Can be undefined if is not a validation part
+         * @param {Array}    props    properties names Can be undefined if is not a validation part
          */
-        function executeValidate(errors, steps, props, partName) {
-
+        function executeValidate(errors, steps, props) {
             if (props) {
                 for (var i = 0; i < props.length; i++) {
-                    executeRule(errors, _rules[props[i]], props[i], steps, partName);
+                    executeRule(errors, _rules[props[i]], props[i], steps);
                 }
             } else {
                 for (var prop in _rules) {
@@ -652,7 +664,7 @@
 
         /**
          * Validate with an array of property names
-         * @param   {[[Type]]} props properties to validate
+         * @param   {Array} props properties to validate
          * @param   {Array} steps steps to validate
          * @returns {Array} array containing errors
          */
@@ -661,7 +673,7 @@
             var errors = [];
 
             if (props) {
-                executeValidate(errors, steps, props, steps);
+                executeValidate(errors, steps, props);
             }
 
             return errors;
@@ -679,7 +691,7 @@
 
             if (parts) {
                 for (var i = 0; i < parts.length; i++) {
-                    executeValidate(errors, steps, _validationParts[parts[i]]['props'], parts[i]);
+                    executeValidate(errors, steps, _validationParts[parts[i]]['props']);
                 }
             }
 
