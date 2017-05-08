@@ -494,70 +494,106 @@
          * @param {Array} steps
          * @param {Array}    props    properties names Can be undefined if is not a validation part
          */
-        function executeValidate(_obj, errors, steps, props) {
+        function executeValidate(_obj, errors, steps, props, categories) {
             if (props) {
                 for (var i = 0; i < props.length; i++) {
-                    executeRule(_obj, errors, _rules[props[i]], steps);
+                    if (isContainsCategory(categories, _rules[props[i]].categories)) {
+                        executeRule(_obj, errors, _rules[props[i]], steps);
+                    }
                 }
             } else {
                 for (var prop in _rules) {
-                    executeRule(_obj, errors, _rules[prop], steps);
+                    if (isContainsCategory(categories, _rules[prop].categories)) {
+                        executeRule(_obj, errors, _rules[prop], steps);
+                    }
                 }
             }
         }
 
+        function isContainsCategory(wantCats, ruleCats) {
+            if (!wantCats || wantCats.length === 0) {
+                return true;
+            }
+
+            if (ruleCats && ruleCats.length > 0) {
+                for (var idx in wantCats) {
+                    if (ruleCats.indexOf(wantCats[idx]) !== -1) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         /**
          * validate all rules
-         * @param _obj the object to test
-         * @param   {Array} steps steps to validate
-         * @returns {Array} array containing errors
+         * @param   {boolean} justBool   is the validate return the resultat (boolean) or an object of errors
+         * @param   {[[Type]]} _obj       the object to test
+         * @param   {Array}    steps      steps to validate
+         * @param   {[[Type]]} categories [[Description]]
+         * @returns {Array}    array containing errors
          */
-        function validate(_obj, steps) {
+        function validate(justBool, _obj, steps, categories) {
 
             var errors = [];
 
             if (_obj) {
-                executeValidate(_obj, errors, steps);
+                executeValidate(_obj, errors, steps, undefined, categories);
             }
 
+            if (justBool) {
+                return (errors.length === 0);
+            }
+            
             return errors;
         }
 
         /**
          * Validate with an array of property names
+         * @param   {boolean} justBool   is the validate return the resultat (boolean) or an object of errors
          * @param _obj the object to test
          * @param   {Array} props properties to validate
          * @param   {Array} steps steps to validate
          * @returns {Array} array containing errors
          */
-        function validateProps(_obj, props, steps) {
+        function validateProps(justBool, _obj, props, steps, categories) {
 
             var errors = [];
 
             if (_obj && props) {
-                executeValidate(_obj, errors, steps, props);
+                executeValidate(_obj, errors, steps, props, categories);
             }
 
+            if (justBool) {
+                return (errors.length === 0);
+            }
+            
             return errors;
         }
 
         /**
          * Validate with define parts
+         * @param   {boolean} justBool   is the validate return the resultat (boolean) or an object of errors
          * @param _obj the object to test
          * @param   {Array} parts parts to validate
          * @param   {Array} steps steps to validate
          * @returns {Array} array containing errors
          */
-        function validateParts(_obj, parts, steps) {
+        function validateParts(justBool, _obj, parts, steps, categories) {
 
             var errors = [];
 
             if (_obj && parts) {
                 for (var i = 0; i < parts.length; i++) {
-                    executeValidate(_obj, errors, steps, _validationParts[parts[i]]['props']);
+                    executeValidate(_obj, errors, steps, _validationParts[parts[i]]['props'], categories);
                 }
             }
 
+            if (justBool) {
+                return (errors.length === 0);
+            }
+            
             return errors;
         }
 
@@ -589,7 +625,9 @@
             global: global,
             g: global,
             reset: reset,
-            resetWorld: resetWorld
+            resetWorld: resetWorld,
+            addCategories: addCategories,
+            deleteCategories: deleteCategories
         };
         var creationOperationDsl = {
             newRule: newRule,
@@ -659,7 +697,8 @@
                 global: false,
                 validationRules: {},
                 activeDepends: [],
-                passiveDepends: []
+                passiveDepends: [],
+                categories: []
             };
         }
 
@@ -776,6 +815,24 @@
                 mustBeValid: mustBeValid,
                 operand: operand
             });
+
+            return _dslRule;
+        }
+
+        function addCategories(categories) {
+            if (categories) {
+                _propRules.categories.push(categories);
+            }
+
+            return _dslRule;
+        }
+
+        function deleteCategories(categories) {
+            if (categories) {
+                for (var idx in categories) {
+                    _propRules.categories.splice($.inArray(categories[idx], _propRules.categories), 1);
+                }
+            }
 
             return _dslRule;
         }
