@@ -1,6 +1,11 @@
+/**
+ * kleclerc
+ */
 "use strict";
 
 /**
+ TRANSFORM EXISTING JS VALIDATOR TO TS. IN FUTURE THE COMPONENT CAN CHANGE FOR USING CLASS/INTERFACE.
+
  This utils are created by Leclerc Kevin (leclerc.kevin@gmail.com)
  You work in 2 steps for create a validation.
  You use the ruleMaker for create rules.
@@ -14,15 +19,12 @@
  */
 (function (window) {
 
-    function findIdx(arr, value) {
-        var b = arr.length;
-        while (b--) {
-            if (arr[b] === value) return b;
-        }
-        return -1;
-    };
-    
-    var common = (function () {
+    interface ValidationResult {
+        result: Boolean;
+        error: String;
+    }
+
+    let common = (function () {
         /**
          * @param    item object to test
          * @returns {boolean} result of test
@@ -50,8 +52,8 @@
                 return false;
             }
 
-            var num = +val;
-            return !isNaN(num) ? !!num : !!String(val).toLowerCase().replace(!!0, '');
+            let num = +val;
+            return !isNaN(num) ? !!num : !!String(val).toLowerCase().replace("false", "");
         }
 
         /**
@@ -77,17 +79,17 @@
          * @param    defaultValue [[Description]]
          * @returns  Object value
          */
-        function get(o, prop, defaultValue) {
-            if (!prop || !common.isString(prop) || !prop.trim().length > 0) {
+        function get(o, prop, defaultValue?) {
+            if (!prop || !common.isString(prop) || !(prop.trim().length > 0)) {
                 return undefined;
             }
 
-            var props = prop.split('.');
-            var lastObj = o;
+            let props = prop.split(".");
+            let lastObj = o;
 
             if (props && props.length > 1) {
-                //run into the object to got the value of prop
-                for (var key in props) {
+                // run into the object to got the value of prop
+                for (let key in props) {
                     lastObj = lastObj[props[key]];
                 }
             } else {
@@ -101,18 +103,27 @@
             return lastObj;
         }
 
+        function findIdx(arr, value) {
+            let b = arr.length;
+            while (b--) {
+                if (arr[b] === value) return b;
+            }
+            return -1;
+        }
+
         return {
             isObject: isObject,
             isPlainObject: isPlainObject,
             getBool: getBool,
             isString: isString,
             isFunction: isFunction,
-            get: get
+            get: get,
+            findIdx: findIdx
         };
     })();
 
-    var sovalid = function () {
-        var _rules = {},
+    let sovalid = function () {
+        let _rules = {},
             _functions,
             _validationParts = {},
             OPERAND = {
@@ -157,11 +168,11 @@
          * Display all data of the object
          */
         function debug() {
-            console.log(':::RULES:::');
+            console.log(":::RULES:::");
             console.log(_rules);
-            console.log(':::FUNCTIONS:::');
+            console.log(":::FUNCTIONS:::");
             console.log(_functions);
-            console.log(':::VALIDATION PARTS:::');
+            console.log(":::VALIDATION PARTS:::");
             console.log(_validationParts);
         }
 
@@ -241,7 +252,7 @@
          * @returns {Object} [[Description]]
          */
         function validationPartExist(pname) {
-            return (_validationParts[pname] ? true : false);
+            return (!!_validationParts[pname]);
         }
 
         /**
@@ -250,19 +261,19 @@
         (function initRules() {
             _functions = {};
 
-            _functions['min'] = function minRule(currentValue, params) {
+            _functions["min"] = function minRule(currentValue, params) {
                 return (currentValue >= params.value);
             };
 
-            _functions['max'] = function maxRule(currentValue, params) {
+            _functions["max"] = function maxRule(currentValue, params) {
                 return (currentValue <= params.value);
             };
 
-            _functions['minLength'] = function minLengthRule(currentValue, params) {
+            _functions["minLength"] = function minLengthRule(currentValue, params) {
                 return (currentValue.length >= params.value);
             };
 
-            _functions['maxLength'] = function maxLengthRule(currentValue, params) {
+            _functions["maxLength"] = function maxLengthRule(currentValue, params) {
                 return (currentValue.length <= params.value);
             };
         })();
@@ -276,63 +287,63 @@
          * @returns {Object} [[Description]]
          */
         function applyRule(_obj, rule, currentValue, steps) {
-            var validationResult = true;
-            var error = undefined;
-            var params = undefined;
-            var isForceValidation = false;
+            let validationResult: Boolean|Object = true;
+            let error = undefined;
+            let params = undefined;
+            let isForceValidation = false;
 
             /**
              * Check if depends are satisfied and the requirement of a value
              */
             (function doPreValidation() {
-                var isFunctionRes;
-                var i;
-                var isContainsValue = checkIfContainsValue(currentValue);
+                let isFunctionRes;
+                let i;
+                let isContainsValue = checkIfContainsValue(currentValue);
 
-                //check the passive depends rules. If a rule is true, the value become required
+                // check the passive depends rules. If a rule is true, the value become required
                 for (i = 0; i < rule.passiveDepends.length; i++) {
                     isFunctionRes = common.isFunction(rule.passiveDepends[i].value);
 
                     if ((isFunctionRes && rule.passiveDepends[i].value.call(this, common.get(_obj, rule.passiveDepends[i].prop))) ||
                         (!isFunctionRes && executeCondition(rule.passiveDepends[i]))) {
 
-                        //if the depends is true, force the validation
+                        // if the depends is true, force the validation
                         isForceValidation = true;
                     } else if (rule.passiveDepends[i].mustBeValid) {
-                        //if the passive depends is not true, the validation must not be done
+                        // if the passive depends is not true, the validation must not be done
                         validationResult = true;
 
                         return;
                     }
                 }
 
-                //if the value is required by passive depends and the value is null
+                // if the value is required by passive depends and the value is null
                 if (isForceValidation && !isContainsValue) {
-                    error = 'required';
+                    error = "required";
                     validationResult = false;
 
                     return;
                 }
 
-                //check the normal depends rules.
+                // check the normal depends rules.
                 for (i = 0; i < rule.activeDepends.length; i++) {
                     isFunctionRes = common.isFunction(rule.activeDepends[i].value);
 
                     if ((isFunctionRes && !rule.activeDepends[i].value.call(this, common.get(_obj, rule.activeDepends[i].prop))) ||
                         (!isFunctionRes && !executeCondition(rule.activeDepends[i]))) {
 
-                        //if the depends is not true, bypass the validation
+                        // if the depends is not true, bypass the validation
                         validationResult = true;
 
                         return;
                     }
                 }
 
-                if (rule.global) { //checks for not specific property
+                if (rule.global) { // checks for not specific property
                     doValidation();
-                } else if (rule.required) { //if a value is required
+                } else if (rule.required) { // if a value is required
                     if (isContainsSteps(steps, rule.requiredSteps) && !isContainsValue) {
-                        error = 'required';
+                        error = "required";
                         validationResult = false;
                     } else {
                         doValidation();
@@ -352,15 +363,15 @@
              * @param currentValue
              */
             function checkIfContainsValue(currentValue) {
-                var type = typeof currentValue;
+                let type = typeof currentValue;
 
-                //test if the value is a boolean and is define with valid values (true/false)
-                if (type === 'boolean' && (currentValue === null || currentValue === undefined)) {
+                // test if the value is a boolean and is define with valid values (true/false)
+                if (type === "boolean" && (currentValue === null || currentValue === undefined)) {
 
                     return false;
 
-                    //else test if the value is not a number/boolean and if the value is define or if the value is a string with only space
-                } else return !(type !== 'number' && type !== 'boolean' && (!currentValue || (common.isString(currentValue) && currentValue.trim() === '')));
+                    // else test if the value is not a number/boolean and if the value is define or if the value is a string with only space
+                } else return !(type !== "number" && type !== "boolean" && (!currentValue || (common.isString(currentValue) && currentValue.trim() === "")));
             }
 
             /**
@@ -368,11 +379,11 @@
              * @returns {boolean} [[Description]]
              */
             function executeCondition(depend) {
-                var currentValue = common.get(_obj, depend.prop);
+                let currentValue = common.get(_obj, depend.prop);
 
-                if (typeof depend.value === 'number' && (currentValue === '' || currentValue === undefined || currentValue === null)) {
+                if (typeof depend.value === "number" && (currentValue === "" || currentValue === undefined || currentValue === null)) {
                     return false;
-                } else if (typeof depend.value === 'boolean') {
+                } else if (typeof depend.value === "boolean") {
                     currentValue = common.getBool(currentValue);
                 }
 
@@ -401,15 +412,15 @@
              * Execute the validation rule
              */
             function doValidation() {
-                //If the step required is not in the checked steps and the value is undefined, so don't validate it
+                // If the step required is not in the checked steps and the value is undefined, so don't validate it
                 if (!rule.global && (currentValue === undefined || currentValue === null)) {
                     return;
                 }
 
-                for (var keyPropRule in rule.validationRules) {
+                for (let keyPropRule in rule.validationRules) {
                     if (rule.validationRules.hasOwnProperty(keyPropRule)) {
                         if (isContainsSteps(steps, rule.validationRules[keyPropRule].steps)) {
-                            var fn = _functions[rule.validationRules[keyPropRule].fn];
+                            let fn = _functions[rule.validationRules[keyPropRule].fn];
 
                             if (common.isFunction(rule.validationRules[keyPropRule].params.value)) {
                                 validationResult = fn.call(this, currentValue, rule.validationRules[keyPropRule].params.value.call(this));
@@ -418,16 +429,16 @@
                             }
 
                             if (common.isObject(validationResult)) {
-                                if (!validationResult.result) {
-                                    if (validationResult.error) {
-                                        error = validationResult.error;
+                                if (!(<ValidationResult> validationResult).result) {
+                                    if ((<ValidationResult> validationResult).error) {
+                                        error = (<ValidationResult> validationResult).error;
                                     } else {
                                         error = keyPropRule;
                                     }
 
                                     params = rule.validationRules[keyPropRule].params;
 
-                                    validationResult = validationResult.result;
+                                    validationResult = (<ValidationResult> validationResult).result;
 
                                     return;
                                 }
@@ -455,7 +466,7 @@
                 }
 
                 if (ruleSteps && ruleSteps.length > 0) {
-                    for (var idx in wantSteps) {
+                    for (let idx in wantSteps) {
                         if (ruleSteps.indexOf(wantSteps[idx]) !== -1) {
                             return true;
                         }
@@ -481,14 +492,16 @@
          */
         function executeRule(_obj, errors, rule, steps) {
             if (rule) {
-                var currentValue = common.get(_obj, rule.prop);
+                let currentValue = common.get(_obj, rule.prop);
 
-                var applyRuleObj = applyRule(_obj, rule, currentValue, steps);
+                let applyRuleObj = applyRule(_obj, rule, currentValue, steps);
 
                 if (applyRuleObj.validationResult === false) {
                     errors.push({
+                        testName: rule.name,
                         prop: rule.prop,
-                        value: currentValue,
+                        selector: rule.selector,
+                        currentValue: currentValue,
                         error: applyRuleObj.error,
                         params: (applyRuleObj.params && applyRuleObj.params.value ? applyRuleObj.params.value : applyRuleObj.params)
                     });
@@ -502,16 +515,17 @@
          * @param {Array} errors
          * @param {Array} steps
          * @param {Array}    props    properties names Can be undefined if is not a validation part
+         * @param categories
          */
         function executeValidate(_obj, errors, steps, props, categories) {
             if (props) {
-                for (var i = 0; i < props.length; i++) {
+                for (let i = 0; i < props.length; i++) {
                     if (isContainsCategory(categories, _rules[props[i]].categories)) {
                         executeRule(_obj, errors, _rules[props[i]], steps);
                     }
                 }
             } else {
-                for (var prop in _rules) {
+                for (let prop in _rules) {
                     if (isContainsCategory(categories, _rules[prop].categories)) {
                         executeRule(_obj, errors, _rules[prop], steps);
                     }
@@ -525,7 +539,7 @@
             }
 
             if (ruleCats && ruleCats.length > 0) {
-                for (var idx in wantCats) {
+                for (let idx in wantCats) {
                     if (ruleCats.indexOf(wantCats[idx]) !== -1) {
                         return true;
                     }
@@ -538,13 +552,14 @@
         /**
          * validate all rules
          * @param   {boolean} justBool   is the validate return the resultat (boolean) or an object of errors
-         * @param   {[[Type]]} _obj       the object to test
+         * @param   {Object} _obj       the object to test
          * @param   {Array}    steps      steps to validate
-         * @param   {[[Type]]} categories [[Description]]
+         * @param   {Array} categories [[Description]]
          * @returns {Array}    array containing errors
          */
         function validate(justBool, _obj, steps, categories) {
-            var errors = [];
+
+            let errors = [];
 
             if (_obj) {
                 executeValidate(_obj, errors, steps, undefined, categories);
@@ -553,7 +568,7 @@
             if (justBool) {
                 return (errors.length === 0);
             }
-            
+
             return errors;
         }
 
@@ -563,11 +578,12 @@
          * @param _obj the object to test
          * @param   {Array} props properties to validate
          * @param   {Array} steps steps to validate
+         * @param categories
          * @returns {Array} array containing errors
          */
         function validateProps(justBool, _obj, props, steps, categories) {
 
-            var errors = [];
+            let errors = [];
 
             if (_obj && props) {
                 executeValidate(_obj, errors, steps, props, categories);
@@ -576,7 +592,7 @@
             if (justBool) {
                 return (errors.length === 0);
             }
-            
+
             return errors;
         }
 
@@ -586,22 +602,23 @@
          * @param _obj the object to test
          * @param   {Array} parts parts to validate
          * @param   {Array} steps steps to validate
+         * @param categories
          * @returns {Array} array containing errors
          */
         function validateParts(justBool, _obj, parts, steps, categories) {
 
-            var errors = [];
+            let errors = [];
 
             if (_obj && parts) {
-                for (var i = 0; i < parts.length; i++) {
-                    executeValidate(_obj, errors, steps, _validationParts[parts[i]]['props'], categories);
+                for (let i = 0; i < parts.length; i++) {
+                    executeValidate(_obj, errors, steps, _validationParts[parts[i]]["props"], categories);
                 }
             }
 
             if (justBool) {
                 return (errors.length === 0);
             }
-            
+
             return errors;
         }
 
@@ -614,10 +631,10 @@
      * @param   {String} prop     [[Description]]
      * @returns {object} functions usable on rulemaker object
      */
-    var ruleMaker = (function () {
-        var _propRules;
-        var _nextIsNew = true;
-        var _dslRule = {
+    let ruleMaker = (function () {
+        let _propRules;
+        let _nextIsNew = true;
+        let _dslRule = {
             required: required,
             r: required,
             next: next,
@@ -637,13 +654,13 @@
             addCategories: addCategories,
             deleteCategories: deleteCategories
         };
-        var creationOperationDsl = {
+        let creationOperationDsl = {
             newRule: newRule,
             modifyRule: modifyRule,
             resetWorld: resetWorld,
             startFrom: startFrom
         };
-        var _propRulesArray;
+        let _propRulesArray;
 
         function startFrom(propRulesArray) {
             if (propRulesArray) {
@@ -661,11 +678,12 @@
          * @param prop
          * @returns {{required: required, r: required, make: make, addValidation: addValidation, av: addValidation, deleteValidation: deleteValidation, dv: deleteValidation, addActiveDepends: addActiveDepends, aad: addActiveDepends, addPassiveDepends: addPassiveDepends, apd: addPassiveDepends, global: global, g: global, reset: reset}}
          */
-        function newRule(name, prop) {
+        function newRule(name, prop, selector) {
             initPropRules();
 
             _propRules.name = name;
             _propRules.prop = prop;
+            _propRules.selector = selector;
 
             return _dslRule;
         }
@@ -837,8 +855,8 @@
 
         function deleteCategories(categories) {
             if (categories) {
-                for (var idx in categories) {
-                    _propRules.categories.splice(_propRules.categories, findIdx(categories[idx]), 1);
+                for (let idx in categories) {
+                    _propRules.categories.splice(common.findIdx(_propRules.categories, categories[idx]), 1);
                 }
             }
 
@@ -863,7 +881,7 @@
         return creationOperationDsl;
     })();
 
-    window.sovalid = sovalid;
-    window.ruleMaker = ruleMaker;
-    window.sovalidCommons = common;
+    window["sovalid"] = sovalid;
+    window["ruleMaker"] = ruleMaker;
+    window["sovalidCommons"] = common;
 })(window);
