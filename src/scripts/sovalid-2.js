@@ -21,7 +21,7 @@
         }
         return -1;
     };
-    
+
     var common = (function () {
         /**
          * @param    item object to test
@@ -553,7 +553,7 @@
             if (justBool) {
                 return (errors.length === 0);
             }
-            
+
             return errors;
         }
 
@@ -576,7 +576,7 @@
             if (justBool) {
                 return (errors.length === 0);
             }
-            
+
             return errors;
         }
 
@@ -601,7 +601,7 @@
             if (justBool) {
                 return (errors.length === 0);
             }
-            
+
             return errors;
         }
 

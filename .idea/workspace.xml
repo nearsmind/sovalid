@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7e55246-b4c4-4d12-a968-94a5f0e29391" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/sovalid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/sovalid.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/sovalid.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tsconfig.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sovalid-1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sovalid-1.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sovalid-2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sovalid-2.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sovalid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sovalid.js.map" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/sovalid-1.js" afterPath="$PROJECT_DIR$/src/scripts/sovalid-1.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/sovalid-2.js" afterPath="$PROJECT_DIR$/src/scripts/sovalid-2.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/sovalid.ts" afterPath="$PROJECT_DIR$/src/scripts/sovalid-3.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testsovalid.html" afterPath="$PROJECT_DIR$/src/html/testsovalid.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testsovalid2.html" afterPath="$PROJECT_DIR$/src/html/testsovalid2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/typescript-compiler.xml" afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sovalid-2.js" afterPath="$PROJECT_DIR$/dist/sovalid-2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sovalid-2.min.js" afterPath="$PROJECT_DIR$/dist/sovalid-2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testsovalid2.html" afterPath="$PROJECT_DIR$/testsovalid2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="sovalid2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,234 +37,14 @@
     <favorites_list name="sovalid2" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sovalid-1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/sovalid-1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="628" column="12" lean-forward="false" selection-start-line="628" selection-start-column="12" selection-end-line="628" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testsovalid2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testsovalid2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sovalid-2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/sovalid-2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8208">
-              <caret line="548" column="23" lean-forward="true" selection-start-line="548" selection-start-column="23" selection-end-line="548" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sovalid.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/sovalid.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sovalid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/sovalid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="593" column="35" lean-forward="false" selection-start-line="593" selection-start-column="35" selection-end-line="593" selection-end-column="35" />
-              <folding>
-                <marker date="1494334307701" expanded="true" signature="34:619" ph="/** This utils are created by Leclerc Kevin (leclerc.kevin@gmail.com) ...*/" />
-                <marker date="1494334307701" expanded="true" signature="639:25125" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="671:3424" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="681:782" ph="/** @param    item object to test ...*/" />
-                <marker date="1494334307701" expanded="true" signature="815:914" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="923:1099" ph="/** Test if an object is a true object, not window or anything else ...*/" />
-                <marker date="1494334307701" expanded="true" signature="1137:1245" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="1254:1332" ph="/** @param val ...*/" />
-                <marker date="1494334307701" expanded="true" signature="1363:1574" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="1400:1445" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="1583:1684" ph="/** @param    item object to test ...*/" />
-                <marker date="1494334307701" expanded="true" signature="1717:1775" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="1784:1885" ph="/** @param    item object to test ...*/" />
-                <marker date="1494334307701" expanded="true" signature="1920:1980" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="1989:2273" ph="/** get value of a property ...*/" />
-                <marker date="1494334307701" expanded="true" signature="2318:2955" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="2398:2447" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="2561:2750" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="2666:2736" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="2768:2822" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="2865:2917" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="3183:3417" ph="{&quot;isObject&quot;: isObject...}" />
-                <marker date="1494334307701" expanded="true" signature="3459:23270" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="3531:3933" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="3942:4553" ph="{&quot;validate&quot;: validate...}" />
-                <marker date="1494334307701" expanded="true" signature="4563:4620" ph="/** Display all data of the object ...*/" />
-                <marker date="1494334307701" expanded="true" signature="4646:4905" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="4914:5093" ph="/** Add directly your property rule ...*/" />
-                <marker date="1494334307701" expanded="true" signature="5130:5308" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="5206:5273" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="5317:6307" ph="/** @param propRulesArray ...*/" />
-                <marker date="1494334307701" expanded="true" signature="6350:6596" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="6417:6561" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="6486:6545" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="6605:7643" ph="/** Delete a property rule ...*/" />
-                <marker date="1494334307701" expanded="true" signature="7678:7747" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="7756:7988" ph="/** Define your own validation rule ...*/" />
-                <marker date="1494334307701" expanded="true" signature="8035:8156" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="8066:8121" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="8165:8415" ph="/** Define a validation part with an array of property name ...*/" />
-                <marker date="1494334307701" expanded="true" signature="8465:8645" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="8499:8610" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="8543:8595" ph="{&quot;props&quot;: props...}" />
-                <marker date="1494334307701" expanded="true" signature="8654:8792" ph="/** [[Description]] ...*/" />
-                <marker date="1494334307701" expanded="true" signature="8837:8896" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="8905:8950" ph="/** Define basic rules ...*/" />
-                <marker date="1494334307701" expanded="true" signature="8981:9631" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="9083:9153" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="9226:9296" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="9381:9458" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="9543:9620" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="9644:9940" ph="/** Execute validations defined for a property ...*/" />
-                <marker date="1494334307701" expanded="true" signature="10001:18463" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="10170:10266" ph="/** Check if depends are satisfied and the requirement of a value ...*/" />
-                <marker date="1494334307701" expanded="true" signature="10307:12936" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="10603:11337" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="10909:11054" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="11120:11319" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="11482:11615" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="11731:12234" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12035:12216" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12268:12323" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12364:12678" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12454:12571" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12597:12660" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12700:12922" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12743:12806" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12832:12904" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="12953:13058" ph="/** @returns {boolean}  [[Description]] ...*/" />
-                <marker date="1494334307701" expanded="true" signature="13115:13741" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="13357:13551" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="13754:13880" ph="/** @param   {object}  depend [[Description]] ...*/" />
-                <marker date="1494334307701" expanded="true" signature="13927:15312" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="14129:14182" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="14243:14327" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="14368:15298" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="14415:14477" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="14530:14593" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="14637:14699" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="14750:14813" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="14853:14916" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="14964:15028" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="15072:15135" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="15216:15280" ph="..." />
-                <marker date="1494334307701" expanded="true" signature="15325:15387" ph="/** Execute the validation rule ...*/" />
-                <marker date="1494334307701" expanded="true" signature="15424:17587" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="15634:15681" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="15744:17573" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="15820:17555" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="15915:17533" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="16103:16273" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="16307:16460" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="16528:17243" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="16592:17156" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="16658:16769" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="16811:16911" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="17300:17507" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="17600:17803" ph="/** @param   {Array} wantSteps steps to validate ...*/" />
-                <marker date="1494334307701" expanded="true" signature="17863:18304" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="17923:17975" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="18031:18260" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="18080:18242" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="18152:18220" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="18324:18452" ph="{&quot;validationResult&quot;: validationResult...}" />
-                <marker date="1494334307701" expanded="true" signature="18472:18743" ph="/** Execute the rule ...*/" />
-                <marker date="1494334307701" expanded="true" signature="18800:19502" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="18824:19492" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="19030:19478" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="19064:19458" ph="{&quot;prop&quot;: rule.prop...}" />
-                <marker date="1494334307701" expanded="true" signature="19511:19796" ph="/** Execute the validation ...*/" />
-                <marker date="1494334307701" expanded="true" signature="19870:20451" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="19895:20170" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="19952:20156" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20039:20138" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20188:20441" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20231:20427" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20314:20409" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20508:20894" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20562:20606" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20656:20858" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20700:20844" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20766:20826" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="20903:21287" ph="/** validate all rules ...*/" />
-                <marker date="1494334307701" expanded="true" signature="21349:21619" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="21402:21494" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="21521:21582" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="21628:22037" ph="/** Validate with an array of property names ...*/" />
-                <marker date="1494334307701" expanded="true" signature="22111:22386" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="22173:22261" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="22288:22349" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="22395:22785" ph="/** Validate with define parts ...*/" />
-                <marker date="1494334307701" expanded="true" signature="22859:23243" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="22921:23118" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="22978:23104" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="23145:23206" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="23276:23464" ph="/** Help to the making of rules for a prop ...*/" />
-                <marker date="1494334307701" expanded="true" signature="23498:25125" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="23578:24218" ph="{&quot;required&quot;: required...}" />
-                <marker date="1494334307701" expanded="true" signature="24255:24401" ph="{&quot;newRule&quot;: newRule...}" />
-                <marker date="1494334307701" expanded="true" signature="24475:24661" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="24509:24610" ph="{...}" />
-                <marker date="1494334307701" expanded="true" signature="24670:25079" ph="/** @param name ...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1494334306358" expanded="true" signature="59:73917" ph="..." />
-                <marker date="1494334306358" expanded="true" signature="73843:73860" ph="..." />
-                <marker date="1494334306358" expanded="true" signature="73843:73878" ph="..." />
-                <marker date="1494334306358" expanded="true" signature="73843:73891" ph="..." />
-                <marker date="1494334306358" expanded="true" signature="73843:73906" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="TypeScript File" />
         <option value="tsconfig.json" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -267,9 +53,15 @@
       <find>//</find>
       <find>'</find>
       <find>validationResult</find>
+      <find>activeDepends</find>
+      <find>passiveDepends</find>
+      <find>,</find>
+      <find>validationRules</find>
+      <find>'-' +</find>
     </findStrings>
     <replaceStrings>
       <replace>//</replace>
+      <replace>;</replace>
       <replace>&quot;</replace>
     </replaceStrings>
   </component>
@@ -291,6 +83,14 @@
         <option value="$PROJECT_DIR$/dist/sovalid.js" />
         <option value="$PROJECT_DIR$/dist/sovalid-2.js" />
         <option value="$PROJECT_DIR$/dist/sovalid.ts" />
+        <option value="$PROJECT_DIR$/dist/sovalid3.ts" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/dist-dev/testsovalid.html" />
+        <option value="$PROJECT_DIR$/src/html/testsovalid2.html" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/src/scripts/sovalid-2.js" />
+        <option value="$PROJECT_DIR$/src/scripts/sovalid-1.js" />
+        <option value="$PROJECT_DIR$/src/html/testsovalid.html" />
       </list>
     </option>
   </component>
@@ -298,12 +98,83 @@
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <task-name>ts-dev</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>ts-prod</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>sass-dev</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>sass-prod</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>js-dev</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>js-prod</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>css-dev</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>css-prod</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>html-dev</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>html-prod</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="ts-dev" />
+              <dependency value="js-dev" />
+              <dependency value="css-dev" />
+              <dependency value="sass-dev" />
+              <dependency value="html-dev" />
+            </dependencies>
+            <task-name>default</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="ts-prod" />
+              <dependency value="js-prod" />
+              <dependency value="css-prod" />
+              <dependency value="sass-prod" />
+              <dependency value="html-prod" />
+            </dependencies>
+            <task-name>prod</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>watch</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="watch" />
+            </dependencies>
+            <task-name>connect</task-name>
+          </GulpTaskState>
+        </tasks>
+      </GulpfileState>
+    </gulpfiles>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1680" />
-    <option name="height" value="1022" />
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1688" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -320,6 +191,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,56 +204,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sovalid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sovalid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sovalid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sovalid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sovalid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sovalid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sovalid.ts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -390,14 +215,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="C:\dev\tools\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.tslint" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="last_opened_file_path" value="$USER_HOME$/Application Data" />
     <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../tools/nodejs/node" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="C:\Users\kleclerc\AppData\Roaming\npm\node_modules\tslint" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="C:\Users\kleclerc\AppData\Roaming\npm\node_modules\gulp" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\lab\sovalid\src\html" />
+      <recent name="C:\Dev\lab\sovalid\src\scripts" />
+      <recent name="C:\Dev\lab\sovalid\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\lab\sovalid\src\styles" />
       <recent name="C:\dev\prj\brackets\sovalid2" />
       <recent name="C:\dev\prj\brackets\sovalid2\dist" />
     </key>
@@ -415,6 +247,61 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="false" name="default" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>default</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="prod" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>prod</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ts-dev" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>ts-dev</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="html-dev" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>html-dev</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="connect" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>connect</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -640,7 +527,10 @@
       <option name="MuleESBConfig-VmArgs" value="" />
       <option name="MuleESBConfig-MuleHome" value="" />
       <module name="" />
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="Mule.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="org.mule.lang.dw.configuration" factoryName="Data Weave">
       <option name="DataWeaveConfig-WeaveHome" value="" />
@@ -655,6 +545,22 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.default" />
+      <item index="1" class="java.lang.String" itemvalue="Gulp.js.prod" />
+      <item index="2" class="java.lang.String" itemvalue="Gulp.js.ts-dev" />
+      <item index="3" class="java.lang.String" itemvalue="Gulp.js.html-dev" />
+      <item index="4" class="java.lang.String" itemvalue="Gulp.js.connect" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.default" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.prod" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.connect" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.html-dev" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.ts-dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SQLPlugin.ProjectConfiguration">
     <queries />
@@ -670,7 +576,8 @@
       <option name="presentableId" value="Default" />
       <updated>1481608142381</updated>
       <workItem from="1481608145647" duration="14934000" />
-      <workItem from="1494239649170" duration="13749000" />
+      <workItem from="1494239649170" duration="19652000" />
+      <workItem from="1494423078610" duration="12690000" />
     </task>
     <task id="LOCAL-00001" summary="add notion of categories.&#10;change the validation functions (what to return).&#10;fix bugs.">
       <created>1494246778911</created>
@@ -686,11 +593,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494246821837</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="change existing validator v2 to ts">
+      <created>1494334444773</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1494334444773</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28683000" />
+    <option name="totallyTimeSpent" value="47276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -702,37 +616,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1022" extended-state="0" />
+    <frame x="-4" y="-4" width="1688" height="1030" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3274918" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25457877" sideWeight="0.50651467" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25153375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25457877" sideWeight="0.49348533" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -761,12 +676,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/dist/sovalid.js" />
-        <option value="$PROJECT_DIR$/dist/sovalid.js.map" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -800,7 +709,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change in philosophy.&#10;bug fix.&#10;Read the documentation in js file." />
     <MESSAGE value="add notion of categories.&#10;change the validation functions (what to return).&#10;fix bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="add notion of categories.&#10;change the validation functions (what to return).&#10;fix bugs." />
+    <MESSAGE value="change existing validator v2 to ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="change existing validator v2 to ts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -815,7 +725,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsovalid2.html">
+    <entry file="file://$PROJECT_DIR$/src/html/testsovalid2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/sovalid-2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8768">
+          <caret line="548" column="23" lean-forward="false" selection-start-line="548" selection-start-column="23" selection-end-line="548" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/sovalid3.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/sovalid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9488">
+          <caret line="593" column="35" lean-forward="false" selection-start-line="593" selection-start-column="35" selection-end-line="593" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1494506966293" expanded="true" signature="59:61904" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="98:214" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="192:214" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61847" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61865" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61878" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61893" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/sovalid-3.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14160">
+          <caret line="885" column="26" lean-forward="false" selection-start-line="885" selection-start-column="12" selection-end-line="885" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/sovalid-1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10048">
+          <caret line="628" column="12" lean-forward="false" selection-start-line="628" selection-start-column="12" selection-end-line="628" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/testsovalid2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -839,24 +821,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsovalid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/sovalid-1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="0">
           <caret line="628" column="12" lean-forward="false" selection-start-line="628" selection-start-column="12" selection-end-line="628" selection-end-column="12" />
           <folding />
         </state>
@@ -867,11 +834,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1494334306358" expanded="true" signature="59:73917" ph="..." />
-            <marker date="1494334306358" expanded="true" signature="73843:73860" ph="..." />
-            <marker date="1494334306358" expanded="true" signature="73843:73878" ph="..." />
-            <marker date="1494334306358" expanded="true" signature="73843:73891" ph="..." />
-            <marker date="1494334306358" expanded="true" signature="73843:73906" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="59:61904" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="98:214" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="192:214" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61847" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61865" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61878" ph="..." />
+            <marker date="1494506966293" expanded="true" signature="61805:61893" ph="..." />
           </folding>
         </state>
       </provider>
@@ -880,19 +849,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsovalid2.html">
+    <entry file="file://$PROJECT_DIR$/dist/sovalid-2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="8768">
+          <caret line="548" column="23" lean-forward="false" selection-start-line="548" selection-start-column="23" selection-end-line="548" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+    <entry file="file://$PROJECT_DIR$/src/scripts/sovalid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9488">
+          <caret line="593" column="35" lean-forward="false" selection-start-line="593" selection-start-column="35" selection-end-line="593" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/sovalid3.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sovalid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/sovalid.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -902,167 +894,192 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/sovalid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="593" column="35" lean-forward="false" selection-start-line="593" selection-start-column="35" selection-end-line="593" selection-end-column="35" />
-          <folding>
-            <marker date="1494334307701" expanded="true" signature="34:619" ph="/** This utils are created by Leclerc Kevin (leclerc.kevin@gmail.com) ...*/" />
-            <marker date="1494334307701" expanded="true" signature="639:25125" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="671:3424" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="681:782" ph="/** @param    item object to test ...*/" />
-            <marker date="1494334307701" expanded="true" signature="815:914" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="923:1099" ph="/** Test if an object is a true object, not window or anything else ...*/" />
-            <marker date="1494334307701" expanded="true" signature="1137:1245" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="1254:1332" ph="/** @param val ...*/" />
-            <marker date="1494334307701" expanded="true" signature="1363:1574" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="1400:1445" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="1583:1684" ph="/** @param    item object to test ...*/" />
-            <marker date="1494334307701" expanded="true" signature="1717:1775" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="1784:1885" ph="/** @param    item object to test ...*/" />
-            <marker date="1494334307701" expanded="true" signature="1920:1980" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="1989:2273" ph="/** get value of a property ...*/" />
-            <marker date="1494334307701" expanded="true" signature="2318:2955" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="2398:2447" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="2561:2750" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="2666:2736" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="2768:2822" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="2865:2917" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="3183:3417" ph="{&quot;isObject&quot;: isObject...}" />
-            <marker date="1494334307701" expanded="true" signature="3459:23270" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="3531:3933" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="3942:4553" ph="{&quot;validate&quot;: validate...}" />
-            <marker date="1494334307701" expanded="true" signature="4563:4620" ph="/** Display all data of the object ...*/" />
-            <marker date="1494334307701" expanded="true" signature="4646:4905" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="4914:5093" ph="/** Add directly your property rule ...*/" />
-            <marker date="1494334307701" expanded="true" signature="5130:5308" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="5206:5273" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="5317:6307" ph="/** @param propRulesArray ...*/" />
-            <marker date="1494334307701" expanded="true" signature="6350:6596" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="6417:6561" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="6486:6545" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="6605:7643" ph="/** Delete a property rule ...*/" />
-            <marker date="1494334307701" expanded="true" signature="7678:7747" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="7756:7988" ph="/** Define your own validation rule ...*/" />
-            <marker date="1494334307701" expanded="true" signature="8035:8156" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="8066:8121" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="8165:8415" ph="/** Define a validation part with an array of property name ...*/" />
-            <marker date="1494334307701" expanded="true" signature="8465:8645" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="8499:8610" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="8543:8595" ph="{&quot;props&quot;: props...}" />
-            <marker date="1494334307701" expanded="true" signature="8654:8792" ph="/** [[Description]] ...*/" />
-            <marker date="1494334307701" expanded="true" signature="8837:8896" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="8905:8950" ph="/** Define basic rules ...*/" />
-            <marker date="1494334307701" expanded="true" signature="8981:9631" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="9083:9153" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="9226:9296" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="9381:9458" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="9543:9620" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="9644:9940" ph="/** Execute validations defined for a property ...*/" />
-            <marker date="1494334307701" expanded="true" signature="10001:18463" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="10170:10266" ph="/** Check if depends are satisfied and the requirement of a value ...*/" />
-            <marker date="1494334307701" expanded="true" signature="10307:12936" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="10603:11337" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="10909:11054" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="11120:11319" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="11482:11615" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="11731:12234" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12035:12216" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12268:12323" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12364:12678" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12454:12571" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12597:12660" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12700:12922" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12743:12806" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12832:12904" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="12953:13058" ph="/** @returns {boolean}  [[Description]] ...*/" />
-            <marker date="1494334307701" expanded="true" signature="13115:13741" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="13357:13551" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="13754:13880" ph="/** @param   {object}  depend [[Description]] ...*/" />
-            <marker date="1494334307701" expanded="true" signature="13927:15312" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="14129:14182" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="14243:14327" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="14368:15298" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="14415:14477" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="14530:14593" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="14637:14699" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="14750:14813" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="14853:14916" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="14964:15028" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="15072:15135" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="15216:15280" ph="..." />
-            <marker date="1494334307701" expanded="true" signature="15325:15387" ph="/** Execute the validation rule ...*/" />
-            <marker date="1494334307701" expanded="true" signature="15424:17587" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="15634:15681" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="15744:17573" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="15820:17555" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="15915:17533" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="16103:16273" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="16307:16460" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="16528:17243" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="16592:17156" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="16658:16769" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="16811:16911" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="17300:17507" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="17600:17803" ph="/** @param   {Array} wantSteps steps to validate ...*/" />
-            <marker date="1494334307701" expanded="true" signature="17863:18304" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="17923:17975" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="18031:18260" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="18080:18242" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="18152:18220" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="18324:18452" ph="{&quot;validationResult&quot;: validationResult...}" />
-            <marker date="1494334307701" expanded="true" signature="18472:18743" ph="/** Execute the rule ...*/" />
-            <marker date="1494334307701" expanded="true" signature="18800:19502" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="18824:19492" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="19030:19478" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="19064:19458" ph="{&quot;prop&quot;: rule.prop...}" />
-            <marker date="1494334307701" expanded="true" signature="19511:19796" ph="/** Execute the validation ...*/" />
-            <marker date="1494334307701" expanded="true" signature="19870:20451" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="19895:20170" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="19952:20156" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20039:20138" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20188:20441" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20231:20427" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20314:20409" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20508:20894" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20562:20606" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20656:20858" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20700:20844" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20766:20826" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="20903:21287" ph="/** validate all rules ...*/" />
-            <marker date="1494334307701" expanded="true" signature="21349:21619" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="21402:21494" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="21521:21582" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="21628:22037" ph="/** Validate with an array of property names ...*/" />
-            <marker date="1494334307701" expanded="true" signature="22111:22386" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="22173:22261" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="22288:22349" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="22395:22785" ph="/** Validate with define parts ...*/" />
-            <marker date="1494334307701" expanded="true" signature="22859:23243" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="22921:23118" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="22978:23104" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="23145:23206" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="23276:23464" ph="/** Help to the making of rules for a prop ...*/" />
-            <marker date="1494334307701" expanded="true" signature="23498:25125" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="23578:24218" ph="{&quot;required&quot;: required...}" />
-            <marker date="1494334307701" expanded="true" signature="24255:24401" ph="{&quot;newRule&quot;: newRule...}" />
-            <marker date="1494334307701" expanded="true" signature="24475:24661" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="24509:24610" ph="{...}" />
-            <marker date="1494334307701" expanded="true" signature="24670:25079" ph="/** @param name ...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/sovalid-2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8208">
-          <caret line="548" column="23" lean-forward="true" selection-start-line="548" selection-start-column="23" selection-end-line="548" selection-end-column="23" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/sovalid.ts">
+    <entry file="file://$PROJECT_DIR$/dist2/sovalid.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist2/sovalid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-dev/sovalid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-prod/sovalid.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/basics.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-dev/scripts/sovalid-2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-dev/scripts/sovalid-1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-dev/scripts/sovalid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/sovalid-3.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="885" column="26" lean-forward="false" selection-start-line="885" selection-start-column="12" selection-end-line="885" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-dev/styles/basics.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-prod/styles/basics.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-prod/scripts/sovalid.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-prod/scripts/sovalid-1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-prod/testsovalid2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/testsovalid2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/sovalid-2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="869" column="0" lean-forward="true" selection-start-line="869" selection-start-column="0" selection-end-line="869" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/sovalid-1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="706" column="0" lean-forward="true" selection-start-line="706" selection-start-column="0" selection-end-line="706" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/testsovalid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-dev/testsovalid2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist-dev/testsovalid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

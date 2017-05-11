@@ -1,8 +1,8 @@
 "use strict";
 
 /**
-    This utils are created by Leclerc Kevin (leclerc.kevin@gmail.com)
-*/
+ This utils are created by Leclerc Kevin (leclerc.kevin@gmail.com)
+ */
 (function (window) {
     function validator(obj) {
         var _obj = obj,
@@ -512,23 +512,23 @@
                 }
 
                 switch (depend.operand) {
-                case OPERAND.greaterThan:
-                    return (currentValue > depend.value);
-                case OPERAND.greaterThanOrEqual:
-                    return (currentValue >= depend.value);
-                case OPERAND.lowerThan:
-                    return (currentValue < depend.value);
-                case OPERAND.lowerThanOrEqual:
-                    return (currentValue <= depend.value);
-                case OPERAND.equal:
-                    return (currentValue == depend.value);
-                case OPERAND.strictlyEqual:
-                    return (currentValue === depend.value);
-                case OPERAND.different:
-                    return (currentValue != depend.value);
-                case OPERAND.strictlyDifferent:
-                default:
-                    return (currentValue !== depend.value);
+                    case OPERAND.greaterThan:
+                        return (currentValue > depend.value);
+                    case OPERAND.greaterThanOrEqual:
+                        return (currentValue >= depend.value);
+                    case OPERAND.lowerThan:
+                        return (currentValue < depend.value);
+                    case OPERAND.lowerThanOrEqual:
+                        return (currentValue <= depend.value);
+                    case OPERAND.equal:
+                        return (currentValue == depend.value);
+                    case OPERAND.strictlyEqual:
+                        return (currentValue === depend.value);
+                    case OPERAND.different:
+                        return (currentValue != depend.value);
+                    case OPERAND.strictlyDifferent:
+                    default:
+                        return (currentValue !== depend.value);
                 }
             }
 
